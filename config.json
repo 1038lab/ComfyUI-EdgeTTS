@@ -1,0 +1,114 @@
+{
+    "audio_output_dir": "outputs/audio",
+    "default_language": "en-US",
+    "default_voice": "en-US-JennyNeural",
+    "default_speed": 1.0,
+    "default_audio_format": "wav",
+    "ffmpeg_path": "ffmpeg",
+    "edge_tts_voices": {
+        "Chinese": [
+            ["zh-CN-XiaoxiaoNeural", "Female, cheerful"],
+            ["zh-CN-XiaoyiNeural", "Female, warm"],
+            ["zh-CN-YunjianNeural", "Male, formal"],
+            ["zh-CN-YunxiNeural", "Male, casual"],
+            ["zh-CN-YunxiaNeural", "Male, warm"],
+            ["zh-CN-YunyangNeural", "Male, professional"],
+            ["zh-CN-liaoning-XiaobeiNeural", "Female, regional"]
+        ],
+        "English": [
+            ["en-US-JennyNeural", "Female, casual"],
+            ["en-US-AriaNeural", "Female, professional"],
+            ["en-US-GuyNeural", "Male, casual"],
+            ["en-US-DavisNeural", "Male, professional"],
+            ["en-GB-SoniaNeural", "British female"],
+            ["en-GB-RyanNeural", "British male"],
+            ["en-AU-NatashaNeural", "Australian female"],
+            ["en-AU-WilliamNeural", "Australian male"]
+        ],
+        "Japanese": [
+            ["ja-JP-NanamiNeural", "Female, natural"],
+            ["ja-JP-KeitaNeural", "Male, formal"],
+            ["ja-JP-AoiNeural", "Female, cheerful"]
+        ],
+        "Korean": [
+            ["ko-KR-SunHiNeural", "Female, warm"],
+            ["ko-KR-InJoonNeural", "Male, formal"]
+        ],
+        "French": [
+            ["fr-FR-DeniseNeural", "Female, professional"],
+            ["fr-FR-HenriNeural", "Male, formal"]
+        ],
+        "German": [
+            ["de-DE-KatjaNeural", "Female, clear"],
+            ["de-DE-ConradNeural", "Male, professional"]
+        ],
+        "Spanish": [
+            ["es-ES-ElviraNeural", "Female, warm"],
+            ["es-ES-AlvaroNeural", "Male, friendly"]
+        ],
+        "Russian": [
+            ["ru-RU-SvetlanaNeural", "Female, professional"],
+            ["ru-RU-DmitryNeural", "Male, formal"]
+        ]
+    },
+    "whisper_languages": {
+        "auto": "Auto Detect",
+        "af": "Afrikaans",
+        "ar": "Arabic",
+        "hy": "Armenian",
+        "az": "Azerbaijani",
+        "be": "Belarusian",
+        "bs": "Bosnian",
+        "bg": "Bulgarian",
+        "ca": "Catalan",
+        "zh": "Chinese",
+        "hr": "Croatian",
+        "cs": "Czech",
+        "da": "Danish",
+        "nl": "Dutch",
+        "en": "English",
+        "et": "Estonian",
+        "fi": "Finnish",
+        "fr": "French",
+        "gl": "Galician",
+        "de": "German",
+        "el": "Greek",
+        "he": "Hebrew",
+        "hi": "Hindi",
+        "hu": "Hungarian",
+        "is": "Icelandic",
+        "id": "Indonesian",
+        "it": "Italian",
+        "ja": "Japanese",
+        "kn": "Kannada",
+        "kk": "Kazakh",
+        "ko": "Korean",
+        "lv": "Latvian",
+        "lt": "Lithuanian",
+        "mk": "Macedonian",
+        "ms": "Malay",
+        "mr": "Marathi",
+        "mi": "Maori",
+        "ne": "Nepali",
+        "no": "Norwegian",
+        "fa": "Persian",
+        "pl": "Polish",
+        "pt": "Portuguese",
+        "ro": "Romanian",
+        "ru": "Russian",
+        "sr": "Serbian",
+        "sk": "Slovak",
+        "sl": "Slovenian",
+        "es": "Spanish",
+        "sw": "Swahili",
+        "sv": "Swedish",
+        "tl": "Tagalog",
+        "ta": "Tamil",
+        "th": "Thai",
+        "tr": "Turkish",
+        "uk": "Ukrainian",
+        "ur": "Urdu",
+        "vi": "Vietnamese",
+        "cy": "Welsh"
+    }
+} 

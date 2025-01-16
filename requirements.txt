@@ -1,0 +1,5 @@
+edge-tts>=6.1.7
+torchaudio
+openai-whisper>=20231117
+numpy
+#mutagen>=1.47.0  # For audio metadata handling
