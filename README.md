@@ -2,6 +2,8 @@
 
 ComfyUI-EdgeTTS is a powerful text-to-speech node for ComfyUI, leveraging Microsoft's Edge TTS capabilities. It enables seamless conversion of text into natural-sounding speech, supporting multiple languages and voices. Ideal for enhancing user interactions, this node is easy to integrate and customize, making it perfect for various applications.
 
+![edgeTTS](https://github.com/user-attachments/assets/4eb75f7e-72ee-4b69-8de5-6ca436f1e043)
+
 ## Features
 
 ### Edge TTS Node
