@@ -17,4 +17,4 @@ Repository = "https://github.com/1038lab/ComfyUI-EdgeTTS"
 [tool.comfy]
 PublisherId = "ailab"
 DisplayName = "ComfyUI-EdgeTTS"
-Icon = "🔊"
+Icon = ""
