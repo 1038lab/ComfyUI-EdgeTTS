@@ -8,7 +8,6 @@ dependencies = [
     "torchaudio",
     "torch",
     "numpy",
-    "mutagen>=1.47.0",
     "openai-whisper"
 ]
 
