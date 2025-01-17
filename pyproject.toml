@@ -12,7 +12,7 @@ dependencies = [
 
 [project.urls]
 Repository = "https://github.com/1038lab/ComfyUI-EdgeTTS"
-#  Used by Comfy Registry https://comfyregistry.org 
+ #  Used by Comfy Registry https://comfyregistry.org 
 
 [tool.comfy]
 PublisherId = "ailab"
