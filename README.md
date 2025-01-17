@@ -50,9 +50,7 @@ install requirment.txt in the ComfyUI-EdgeTTS folder
 
 ## Usage Examples
 
-
 https://github.com/user-attachments/assets/de67b2e1-3585-4fc6-a5d1-2670dfee2f14
-
 
 ### Text to Speech
 1. Add Edge TTS node to workflow
