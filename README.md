@@ -49,18 +49,20 @@ install requirment.txt in the ComfyUI-EdgeTTS folder
 - CUDA compatible GPU (optional, for faster Whisper processing)
 
 ## Usage Examples
-https://github.com/user-attachments/assets/a5b9165b-a413-49fd-989e-0ef3141afce7
+
 ### Text to Speech
 1. Add Edge TTS node to workflow
 2. Input text and select voice
 3. Adjust speed and pitch if needed
 4. Connect to Save Audio node for export
-
+   
+https://github.com/user-attachments/assets/a5b9165b-a413-49fd-989e-0ef3141afce7
 ### Speech to Text
 1. Add Whisper STT node
 2. Connect audio input
 3. Select model size and language (or auto-detect)
 4. Run to get transcription
+![TTS-STT](https://github.com/user-attachments/assets/9e7367c0-4da1-47e5-b831-1cbb3419273a)
 
 ## Supported Voices
 
