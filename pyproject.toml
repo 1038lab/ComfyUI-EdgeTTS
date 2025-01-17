@@ -6,7 +6,6 @@ license = {file = "LICENSE"}
 dependencies = [
     "edge-tts>=6.1.7",
     "torchaudio",
-    "torch",
     "numpy",
     "openai-whisper"
 ]
@@ -16,6 +15,5 @@ Repository = "https://github.com/1038lab/ComfyUI-EdgeTTS"
 #  Used by Comfy Registry https://comfyregistry.org
 [tool.comfy]
 PublisherId = "AILab"
-DisplayName = "ComfyUI Audio Nodes"
 DisplayName = "ComfyUI-EdgeTTS"
 Icon = "🔊"
