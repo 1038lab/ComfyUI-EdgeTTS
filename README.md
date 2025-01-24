@@ -4,6 +4,10 @@ ComfyUI-EdgeTTS is a powerful text-to-speech node for ComfyUI, leveraging Micros
 
 ![edgeTTS](https://github.com/user-attachments/assets/4eb75f7e-72ee-4b69-8de5-6ca436f1e043)
 
+## Updates
+
+- V1.1.0 (2025-01-24) - Added 19 new languages and 38 new voices, with more detailed characteristics for existing Chinese voices. For more information, please see the [update log](update.md).
+
 ## Features
 
 ### Edge TTS Node
@@ -68,25 +72,34 @@ https://github.com/user-attachments/assets/a5b9165b-a413-49fd-989e-0ef3141afce7
 
 | Language | Female Voices | Male Voices |
 |----------|--------------|-------------|
-| **Main Languages** |
-| Chinese | XiaoXiao (Cheerful), XiaoYi (Warm) | Yunjian (Formal), Yunxi (Casual), Yunxia (Warm), Yunyang (Pro) |
-| English | Jenny (Casual), Aria (Pro), Sonia (GB), Natasha (AU) | Guy (Casual), Davis (Pro), Ryan (GB), William (AU) |
-| Japanese | Nanami (Natural), Aoi (Cheerful) | Keita (Formal) |
-| Korean | SunHi (Warm) | InJoon (Formal) |
-| **European Languages** |
-| French | Denise (Pro) | Henri (Formal) |
-| German | Katja (Clear) | Conrad (Pro) |
-| Spanish | Elvira (Warm) | Alvaro (Friendly) |
-| Russian | Svetlana (Pro) | Dmitry (Formal) |
-| Italian | Elsa (Warm) | Diego (Formal) |
-| Portuguese | Francisca (BR), Raquel (PT) | Antonio (BR) |
-| Dutch | Colette (Warm) | Maarten (Formal) |
-| Polish | Zofia (Natural) | Marek (Formal) |
-| Turkish | Emel (Warm) | Ahmet (Formal) |
-| **Asian Languages** |
-| Arabic | Zariyah (Warm) | Hamed (Formal) |
-| Hindi | Swara (Warm) | Madhur (Formal) |
-| Indonesian | Gadis (Warm) | Ardi (Formal) |
+| Chinese-Mainland | XiaoXiao (News, Novel, Warm), XiaoYi (Cartoon, Novel, Lively) | Yunjian (Sports, Novel, Passion), Yunxi (Novel, Lively), Yunxia (Cartoon, Novel), Yunyang (News, Professional) |
+| Chinese-Cantonese | HiuGaai (Friendly), HiuMaan (Friendly) | WanLung (Friendly) |
+| Chinese-Taiwan | HsiaoChen (Friendly), HsiaoYu (Friendly) | YunJhe (Friendly) |
+| English-US | Jenny (Friendly), Aria (Positive), Ana (Cute), Michelle (Friendly) | Guy (Passion), Christopher (Authority), Eric (Rational), Roger (Lively), Steffan (Rational) |
+| English-GB | Libby (Friendly), Maisie (Friendly), Sonia (Friendly) | Ryan (Friendly), Thomas (Friendly) |
+| English-AU | Natasha (Friendly) | William (Friendly) |
+| Japanese | Nanami (Friendly) | Keita (Friendly) |
+| Korean | SunHi (Friendly) | InJoon (Friendly), Hyunsu (Multilingual) |
+| French-FR | Denise (Friendly), Eloise (Friendly), Vivienne (Multilingual) | Henri (Friendly), Remy (Multilingual) |
+| French-CA | Sylvie (Friendly) | Jean (Friendly), Antoine (Friendly) |
+| German-DE | Katja (Friendly), Amala (Friendly), Seraphina (Multilingual) | Conrad (Friendly), Killian (Friendly), Florian (Multilingual) |
+
+More voices available in config.json, including voices for:
+- German (AT/CH)
+- Spanish (ES/MX)
+- Russian
+- Italian
+- Portuguese (BR/PT)
+- Dutch
+- Polish
+- Turkish
+- Arabic
+- Hindi
+- Indonesian
+- Vietnamese
+- Thai
+- Ukrainian
+And many more...
 
 Each language provides at least one male and female voice option, allowing you to choose different voice styles based on your needs. 
 
