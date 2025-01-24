@@ -6,49 +6,222 @@
     "default_audio_format": "wav",
     "ffmpeg_path": "ffmpeg",
     "edge_tts_voices": {
-        "Chinese": [
-            ["zh-CN-XiaoxiaoNeural", "Female, cheerful"],
-            ["zh-CN-XiaoyiNeural", "Female, warm"],
-            ["zh-CN-YunjianNeural", "Male, formal"],
-            ["zh-CN-YunxiNeural", "Male, casual"],
-            ["zh-CN-YunxiaNeural", "Male, warm"],
-            ["zh-CN-YunyangNeural", "Male, professional"],
-            ["zh-CN-liaoning-XiaobeiNeural", "Female, regional"]
+        "Chinese-Mainland": [
+            ["zh-CN-XiaoxiaoNeural", "Female, News, Novel, Warm"],
+            ["zh-CN-XiaoyiNeural", "Female, Cartoon, Novel, Lively"],
+            ["zh-CN-YunjianNeural", "Male, Sports, Novel, Passion"],
+            ["zh-CN-YunxiNeural", "Male, Novel, Lively, Sunshine"],
+            ["zh-CN-YunxiaNeural", "Male, Cartoon, Novel, Cute"],
+            ["zh-CN-YunyangNeural", "Male, News, Professional, Reliable"]
         ],
-        "English": [
-            ["en-US-JennyNeural", "Female, casual"],
-            ["en-US-AriaNeural", "Female, professional"],
-            ["en-US-GuyNeural", "Male, casual"],
-            ["en-US-DavisNeural", "Male, professional"],
-            ["en-GB-SoniaNeural", "British female"],
-            ["en-GB-RyanNeural", "British male"],
-            ["en-AU-NatashaNeural", "Australian female"],
-            ["en-AU-WilliamNeural", "Australian male"]
+        "Chinese-Cantonese": [
+            ["zh-HK-HiuGaaiNeural", "Female, Friendly, Positive"],
+            ["zh-HK-HiuMaanNeural", "Female, Friendly, Positive"],
+            ["zh-HK-WanLungNeural", "Male, Friendly, Positive"]
+        ],
+        "Chinese-Taiwan": [
+            ["zh-TW-HsiaoChenNeural", "Female, Friendly, Positive"],
+            ["zh-TW-YunJheNeural", "Male, Friendly, Positive"],
+            ["zh-TW-HsiaoYuNeural", "Female, Friendly, Positive"]
+        ],
+        "Chinese-Dialect": [
+            ["zh-CN-liaoning-XiaobeiNeural", "Female, Dialect, Humorous"],
+            ["zh-CN-shaanxi-XiaoniNeural", "Female, Dialect, Bright"]
+        ],
+        "English-US": [
+            ["en-US-JennyNeural", "Female, Friendly, Considerate, Comfort"],
+            ["en-US-AriaNeural", "Female, Positive, Confident"],
+            ["en-US-GuyNeural", "Male, Passion"],
+            ["en-US-AnaNeural", "Female, Cute"],
+            ["en-US-ChristopherNeural", "Male, Reliable, Authority"],
+            ["en-US-EricNeural", "Male, Rational"],
+            ["en-US-MichelleNeural", "Female, Friendly, Pleasant"],
+            ["en-US-RogerNeural", "Male, Lively"],
+            ["en-US-SteffanNeural", "Male, Rational"]
+        ],
+        "English-GB": [
+            ["en-GB-LibbyNeural", "Female, Friendly, Positive"],
+            ["en-GB-MaisieNeural", "Female, Friendly, Positive"],
+            ["en-GB-RyanNeural", "Male, Friendly, Positive"],
+            ["en-GB-SoniaNeural", "Female, Friendly, Positive"],
+            ["en-GB-ThomasNeural", "Male, Friendly, Positive"]
+        ],
+        "English-AU": [
+            ["en-AU-NatashaNeural", "Female, Friendly, Positive"],
+            ["en-AU-WilliamNeural", "Male, Friendly, Positive"]
         ],
         "Japanese": [
-            ["ja-JP-NanamiNeural", "Female, natural"],
-            ["ja-JP-KeitaNeural", "Male, formal"],
-            ["ja-JP-AoiNeural", "Female, cheerful"]
+            ["ja-JP-NanamiNeural", "Female, Friendly, Positive"],
+            ["ja-JP-KeitaNeural", "Male, Friendly, Positive"]
         ],
         "Korean": [
-            ["ko-KR-SunHiNeural", "Female, warm"],
-            ["ko-KR-InJoonNeural", "Male, formal"]
+            ["ko-KR-SunHiNeural", "Female, Friendly, Positive"],
+            ["ko-KR-InJoonNeural", "Male, Friendly, Positive"],
+            ["ko-KR-HyunsuMultilingualNeural", "Male, Friendly, Positive"]
         ],
-        "French": [
-            ["fr-FR-DeniseNeural", "Female, professional"],
-            ["fr-FR-HenriNeural", "Male, formal"]
+        "French-FR": [
+            ["fr-FR-DeniseNeural", "Female, Friendly, Positive"],
+            ["fr-FR-HenriNeural", "Male, Friendly, Positive"],
+            ["fr-FR-EloiseNeural", "Female, Friendly, Positive"],
+            ["fr-FR-VivienneMultilingualNeural", "Female, Friendly, Positive"],
+            ["fr-FR-RemyMultilingualNeural", "Male, Friendly, Positive"]
         ],
-        "German": [
-            ["de-DE-KatjaNeural", "Female, clear"],
-            ["de-DE-ConradNeural", "Male, professional"]
+        "French-CA": [
+            ["fr-CA-SylvieNeural", "Female, Friendly, Positive"],
+            ["fr-CA-JeanNeural", "Male, Friendly, Positive"],
+            ["fr-CA-AntoineNeural", "Male, Friendly, Positive"]
+        ],
+        "French-CH": [
+            ["fr-CH-ArianeNeural", "Female, Friendly, Positive"],
+            ["fr-CH-FabriceNeural", "Male, Friendly, Positive"]
+        ],
+       "German-DE": [
+            ["de-DE-KatjaNeural", "Female, Friendly, Positive"],
+            ["de-DE-ConradNeural", "Male, Friendly, Positive"],
+            ["de-DE-AmalaNeural", "Female, Friendly, Positive"],
+            ["de-DE-KillianNeural", "Male, Friendly, Positive"],
+            ["de-DE-SeraphinaMultilingualNeural", "Female, Friendly, Positive"],
+            ["de-DE-FlorianMultilingualNeural", "Male, Friendly, Positive"]
+        ],
+        "German-AT": [
+            ["de-AT-JonasNeural", "Male, Friendly, Positive"],
+            ["de-AT-IngridNeural", "Female, Friendly, Positive"]
+        ],
+        "German-CH": [
+            ["de-CH-JanNeural", "Male, Friendly, Positive"],
+            ["de-CH-LeniNeural", "Female, Friendly, Positive"]
         ],
         "Spanish": [
-            ["es-ES-ElviraNeural", "Female, warm"],
-            ["es-ES-AlvaroNeural", "Male, friendly"]
+            ["es-ES-ElviraNeural", "Female, Friendly, Positive"],
+            ["es-ES-AlvaroNeural", "Male, Friendly, Positive"],
+            ["es-ES-XimenaNeural", "Female, Friendly, Positive"]
+        ],
+        "Spanish-MX": [
+            ["es-MX-DaliaNeural", "Female, Friendly, Positive"],
+            ["es-MX-JorgeNeural", "Male, Friendly, Positive"],
+            ["es-MX-PelayoNeural", "Male, Friendly, Positive"]
         ],
         "Russian": [
-            ["ru-RU-SvetlanaNeural", "Female, professional"],
-            ["ru-RU-DmitryNeural", "Male, formal"]
+            ["ru-RU-SvetlanaNeural", "Female, Friendly, Positive"],
+            ["ru-RU-DmitryNeural", "Male, Friendly, Positive"]
+        ],
+        "Italian": [
+            ["it-IT-ElsaNeural", "Female, Friendly, Positive"],
+            ["it-IT-DiegoNeural", "Male, Friendly, Positive"],
+            ["it-IT-IsabellaNeural", "Female, Friendly, Positive"],
+            ["it-IT-GiuseppeMultilingualNeural", "Male, Friendly, Positive"]
+        ],
+        "Portuguese-BR": [
+            ["pt-BR-FranciscaNeural", "Female, Friendly, Positive"],
+            ["pt-BR-AntonioNeural", "Male, Friendly, Positive"],
+            ["pt-BR-ThalitaMultilingualNeural", "Female, Friendly, Positive"]
+        ],
+        "Portuguese-PT": [
+            ["pt-PT-RaquelNeural", "Female, Friendly, Positive"],
+            ["pt-PT-DuarteNeural", "Male, Friendly, Positive"]
+        ],
+        "Dutch": [
+            ["nl-NL-ColetteNeural", "Female, Friendly, Positive"],
+            ["nl-NL-FennaNeural", "Female, Friendly, Positive"],
+            ["nl-NL-MaartenNeural", "Male, Friendly, Positive"]
+        ],
+        "Polish": [
+            ["pl-PL-ZofiaNeural", "Female, Friendly, Positive"],
+            ["pl-PL-MarekNeural", "Male, Friendly, Positive"]
+        ],
+        "Turkish": [
+            ["tr-TR-EmelNeural", "Female, Friendly, Positive"],
+            ["tr-TR-AhmetNeural", "Male, Friendly, Positive"]
+        ],
+        "Arabic": [
+            ["ar-SA-ZariyahNeural", "Female, Friendly, Positive"],
+            ["ar-SA-HamedNeural", "Male, Friendly, Positive"]
+        ],
+        "Hindi": [
+            ["hi-IN-SwaraNeural", "Female, Friendly, Positive"],
+            ["hi-IN-MadhurNeural", "Male, Friendly, Positive"]
+        ],
+        "Indonesian": [
+            ["id-ID-GadisNeural", "Female, Friendly, Positive"],
+            ["id-ID-ArdiNeural", "Male, Friendly, Positive"]
+        ],
+        "Vietnamese": [
+            ["vi-VN-HoaiMyNeural", "Female, Friendly, Positive"],
+            ["vi-VN-NamMinhNeural", "Male, Friendly, Positive"]
+        ],
+        "Thai": [
+            ["th-TH-NiwatNeural", "Male, Friendly, Positive"],
+            ["th-TH-PremwadeeNeural", "Female, Friendly, Positive"]
+        ],
+        "Ukrainian": [
+            ["uk-UA-OstapNeural", "Male, Friendly, Positive"],
+            ["uk-UA-PolinaNeural", "Female, Friendly, Positive"]
+        ],
+        "Greek": [
+            ["el-GR-AthinaNeural", "Female, Friendly, Positive"],
+            ["el-GR-NestorasNeural", "Male, Friendly, Positive"]
+        ],
+        "Czech": [
+            ["cs-CZ-AntoninNeural", "Male, Friendly, Positive"],
+            ["cs-CZ-VlastaNeural", "Female, Friendly, Positive"]
+        ],
+        "Finnish": [
+            ["fi-FI-HarriNeural", "Male, Friendly, Positive"],
+            ["fi-FI-NooraNeural", "Female, Friendly, Positive"]
+        ],
+        "Danish": [
+            ["da-DK-ChristelNeural", "Female, Friendly, Positive"],
+            ["da-DK-JeppeNeural", "Male, Friendly, Positive"]
+        ],
+        "Norwegian": [
+            ["nb-NO-FinnNeural", "Male, Friendly, Positive"],
+            ["nb-NO-PernilleNeural", "Female, Friendly, Positive"]
+        ],
+        "Swedish": [
+            ["sv-SE-MattiasNeural", "Male, Friendly, Positive"],
+            ["sv-SE-SofieNeural", "Female, Friendly, Positive"]
+        ],
+        "Romanian": [
+            ["ro-RO-AlinaNeural", "Female, Friendly, Positive"],
+            ["ro-RO-EmilNeural", "Male, Friendly, Positive"]
+        ],
+        "Slovak": [
+            ["sk-SK-LukasNeural", "Male, Friendly, Positive"],
+            ["sk-SK-ViktoriaNeural", "Female, Friendly, Positive"]
+        ],
+        "Slovenian": [
+            ["sl-SI-PetraNeural", "Female, Friendly, Positive"],
+            ["sl-SI-RokNeural", "Male, Friendly, Positive"]
+        ],
+        "Bengali": [
+            ["bn-IN-BashkarNeural", "Male, Friendly, Positive"],
+            ["bn-IN-TanishaaNeural", "Female, Friendly, Positive"]
+        ],
+        "Malay": [
+            ["ms-MY-OsmanNeural", "Male, Friendly, Positive"],
+            ["ms-MY-YasminNeural", "Female, Friendly, Positive"]
+        ],
+        "Tamil": [
+            ["ta-IN-PallaviNeural", "Female, Friendly, Positive"],
+            ["ta-IN-ValluvarNeural", "Male, Friendly, Positive"],
+            ["ta-SG-AnbuNeural", "Male, Friendly, Positive"],
+            ["ta-SG-VenbaNeural", "Female, Friendly, Positive"]
+        ],
+        "Telugu": [
+            ["te-IN-MohanNeural", "Male, Friendly, Positive"],
+            ["te-IN-ShrutiNeural", "Female, Friendly, Positive"]
+        ],
+        "Marathi": [
+            ["mr-IN-AarohiNeural", "Female, Friendly, Positive"],
+            ["mr-IN-ManoharNeural", "Male, Friendly, Positive"]
+        ],
+        "Swahili": [
+            ["sw-KE-ZuriNeural", "Female, Friendly, Positive"],
+            ["sw-KE-RafikiNeural", "Male, Friendly, Positive"]
+        ],
+        "Persian": [
+            ["fa-IR-DilaraNeural", "Female, Friendly, Positive"],
+            ["fa-IR-FaridNeural", "Male, Friendly, Positive"]
         ]
     },
     "whisper_languages": {
