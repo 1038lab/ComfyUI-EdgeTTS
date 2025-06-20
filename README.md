@@ -2,7 +2,8 @@
 
 ComfyUI-EdgeTTS is a powerful text-to-speech node for ComfyUI, leveraging Microsoft's Edge TTS capabilities. It enables seamless conversion of text into natural-sounding speech, supporting multiple languages and voices. Ideal for enhancing user interactions, this node is easy to integrate and customize, making it perfect for various applications.
 
-![edgeTTS](https://github.com/user-attachments/assets/4eb75f7e-72ee-4b69-8de5-6ca436f1e043)
+https://github.com/user-attachments/assets/a5b9165b-a413-49fd-989e-0ef3141afce7
+
 
 ## Updates
 
@@ -60,14 +61,16 @@ install requirment.txt in the ComfyUI-EdgeTTS folder
 1. Add Edge TTS node to workflow
 2. Input text and select voice
 3. Adjust speed and pitch if needed
-4. Connect to Save Audio node for export
-   
-https://github.com/user-attachments/assets/a5b9165b-a413-49fd-989e-0ef3141afce7
+4. Connect to Save Audio node for export  
+
+![edgeTTS](https://github.com/user-attachments/assets/4eb75f7e-72ee-4b69-8de5-6ca436f1e043)
+
 ### Speech to Text
 1. Add Whisper STT node
 2. Connect audio input
 3. Select model size and language (or auto-detect)
 4. Run to get transcription
+
 ![TTS-STT](https://github.com/user-attachments/assets/9e7367c0-4da1-47e5-b831-1cbb3419273a)
 
 ## Supported Voices
