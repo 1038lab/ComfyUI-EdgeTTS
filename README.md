@@ -6,7 +6,9 @@ ComfyUI-EdgeTTS is a powerful text-to-speech node for ComfyUI, leveraging Micros
 
 ## Updates
 
-- V1.1.0 (2025-01-24) - Added 19 new languages and 38 new voices, with more detailed characteristics for existing Chinese voices. For more information, please see the [update log](update.md).
+- V1.2.0 (2025-06-20) - Simplified voice display format, improved performance with lazy loading and caching, and reduced memory usage. For more information, please see the [update log](update.md#v120-2025620).
+  
+- V1.1.0 (2025-01-24) - Added 19 new languages and 38 new voices, with more detailed characteristics for existing Chinese voices. For more information, please see the [update log](update.md#v110-2025124).
 
 ## Features
 
