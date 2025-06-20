@@ -3,7 +3,7 @@
     "default_language": "en-US",
     "default_voice": "en-US-JennyNeural",
     "default_speed": 1.0,
-    "default_audio_format": "wav",
+    "default_audio_format": "mp3",
     "ffmpeg_path": "ffmpeg",
     "edge_tts_voices": {
         "Chinese-Mainland": [
@@ -12,7 +12,10 @@
             ["zh-CN-YunjianNeural", "Male, Sports, Novel, Passion"],
             ["zh-CN-YunxiNeural", "Male, Novel, Lively, Sunshine"],
             ["zh-CN-YunxiaNeural", "Male, Cartoon, Novel, Cute"],
-            ["zh-CN-YunyangNeural", "Male, News, Professional, Reliable"]
+            ["zh-CN-YunyangNeural", "Male, News, Professional, Reliable"],
+            ["zh-CN-XiaoxiaoMultilingualNeural", "Female, Friendly, Positive"],
+            ["zh-CN-YunfanMultilingualNeural", "Male, Friendly, Positive"],
+            ["zh-CN-YunxiaoMultilingualNeural", "Male, Friendly, Positive"]
         ],
         "Chinese-Cantonese": [
             ["zh-HK-HiuGaaiNeural", "Female, Friendly, Positive"],
@@ -37,22 +40,74 @@
             ["en-US-EricNeural", "Male, Rational"],
             ["en-US-MichelleNeural", "Female, Friendly, Pleasant"],
             ["en-US-RogerNeural", "Male, Lively"],
-            ["en-US-SteffanNeural", "Male, Rational"]
+            ["en-US-SteffanNeural", "Male, Rational"],
+            ["en-US-AvaMultilingualNeural", "Female, Expressive, Caring, Pleasant, Friendly"],
+            ["en-US-AndrewMultilingualNeural", "Male, Warm, Confident, Authentic, Honest"],
+            ["en-US-EmmaMultilingualNeural", "Female, Cheerful, Clear, Conversational"],
+            ["en-US-BrianMultilingualNeural", "Male, Approachable, Casual, Sincere"]
         ],
         "English-GB": [
             ["en-GB-LibbyNeural", "Female, Friendly, Positive"],
             ["en-GB-MaisieNeural", "Female, Friendly, Positive"],
             ["en-GB-RyanNeural", "Male, Friendly, Positive"],
             ["en-GB-SoniaNeural", "Female, Friendly, Positive"],
-            ["en-GB-ThomasNeural", "Male, Friendly, Positive"]
+            ["en-GB-ThomasNeural", "Male, Friendly, Positive"],
+            ["en-GB-AdaMultilingualNeural", "Female, Friendly, Positive"],
+            ["en-GB-OllieMultilingualNeural", "Male, Friendly, Positive"]
         ],
         "English-AU": [
             ["en-AU-NatashaNeural", "Female, Friendly, Positive"],
             ["en-AU-WilliamNeural", "Male, Friendly, Positive"]
         ],
+        "English-CA": [
+            ["en-CA-ClaraNeural", "Female, Friendly, Positive"],
+            ["en-CA-LiamNeural", "Male, Friendly, Positive"]
+        ],
+        "English-HK": [
+            ["en-HK-SamNeural", "Male, Friendly, Positive"],
+            ["en-HK-YanNeural", "Female, Friendly, Positive"]
+        ],
+        "English-IN": [
+            ["en-IN-NeerjaExpressiveNeural", "Female, Friendly, Positive"],
+            ["en-IN-NeerjaNeural", "Female, Friendly, Positive"],
+            ["en-IN-PrabhatNeural", "Male, Friendly, Positive"]
+        ],
+        "English-IE": [
+            ["en-IE-ConnorNeural", "Male, Friendly, Positive"],
+            ["en-IE-EmilyNeural", "Female, Friendly, Positive"]
+        ],
+        "English-KE": [
+            ["en-KE-AsiliaNeural", "Female, Friendly, Positive"],
+            ["en-KE-ChilembaNeural", "Male, Friendly, Positive"]
+        ],
+        "English-NZ": [
+            ["en-NZ-MitchellNeural", "Male, Friendly, Positive"],
+            ["en-NZ-MollyNeural", "Female, Friendly, Positive"]
+        ],
+        "English-NG": [
+            ["en-NG-AbeoNeural", "Male, Friendly, Positive"],
+            ["en-NG-EzinneNeural", "Female, Friendly, Positive"]
+        ],
+        "English-PH": [
+            ["en-PH-JamesNeural", "Male, Friendly, Positive"],
+            ["en-PH-RosaNeural", "Female, Friendly, Positive"]
+        ],
+        "English-SG": [
+            ["en-SG-LunaNeural", "Female, Friendly, Positive"],
+            ["en-SG-WayneNeural", "Male, Friendly, Positive"]
+        ],
+        "English-ZA": [
+            ["en-ZA-LeahNeural", "Female, Friendly, Positive"],
+            ["en-ZA-LukeNeural", "Male, Friendly, Positive"]
+        ],
+        "English-TZ": [
+            ["en-TZ-ElimuNeural", "Male, Friendly, Positive"],
+            ["en-TZ-ImaniNeural", "Female, Friendly, Positive"]
+        ],
         "Japanese": [
             ["ja-JP-NanamiNeural", "Female, Friendly, Positive"],
-            ["ja-JP-KeitaNeural", "Male, Friendly, Positive"]
+            ["ja-JP-KeitaNeural", "Male, Friendly, Positive"],
+            ["ja-JP-MasaruMultilingualNeural", "Male, Friendly, Positive"]
         ],
         "Korean": [
             ["ko-KR-SunHiNeural", "Female, Friendly, Positive"],
@@ -94,7 +149,10 @@
         "Spanish": [
             ["es-ES-ElviraNeural", "Female, Friendly, Positive"],
             ["es-ES-AlvaroNeural", "Male, Friendly, Positive"],
-            ["es-ES-XimenaNeural", "Female, Friendly, Positive"]
+            ["es-ES-XimenaNeural", "Female, Friendly, Positive"],
+            ["es-ES-IsidoraMultilingualNeural", "Female, Friendly, Positive"],
+            ["es-ES-ArabellaMultilingualNeural", "Female, Friendly, Positive"],
+            ["es-ES-TristanMultilingualNeural", "Male, Friendly, Positive"]
         ],
         "Spanish-MX": [
             ["es-MX-DaliaNeural", "Female, Friendly, Positive"],
@@ -109,12 +167,16 @@
             ["it-IT-ElsaNeural", "Female, Friendly, Positive"],
             ["it-IT-DiegoNeural", "Male, Friendly, Positive"],
             ["it-IT-IsabellaNeural", "Female, Friendly, Positive"],
-            ["it-IT-GiuseppeMultilingualNeural", "Male, Friendly, Positive"]
+            ["it-IT-GiuseppeMultilingualNeural", "Male, Friendly, Positive"],
+            ["it-IT-IsabellaMultilingualNeural", "Female, Friendly, Positive"],
+            ["it-IT-MarcelloMultilingualNeural", "Male, Friendly, Positive"],
+            ["it-IT-AlessioMultilingualNeural", "Male, Friendly, Positive"]
         ],
         "Portuguese-BR": [
             ["pt-BR-FranciscaNeural", "Female, Friendly, Positive"],
             ["pt-BR-AntonioNeural", "Male, Friendly, Positive"],
-            ["pt-BR-ThalitaMultilingualNeural", "Female, Friendly, Positive"]
+            ["pt-BR-ThalitaMultilingualNeural", "Female, Friendly, Positive"],
+            ["pt-BR-MacerioMultilingualNeural", "Male, Friendly, Positive"]
         ],
         "Portuguese-PT": [
             ["pt-PT-RaquelNeural", "Female, Friendly, Positive"],

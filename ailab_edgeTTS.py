@@ -1,4 +1,4 @@
-# ComfyUI-EdgeTTS V1.1.0
+# ComfyUI-EdgeTTS V1.2.0
 # A simplified Edge TTS node for ComfyUI
 # Uses Microsoft Edge's online text-to-speech service
 # Outputs standard ComfyUI audio format
@@ -12,7 +12,14 @@ import torchaudio
 import json
 
 class EdgeTTS:
- 
+    _voice_data_cache = None
+
+    @classmethod
+    def get_voice_data(cls):
+        if cls._voice_data_cache is None:
+            cls._voice_data_cache = cls.load_voices()
+        return cls._voice_data_cache
+
     @staticmethod
     def load_voices():
 
@@ -22,37 +29,57 @@ class EdgeTTS:
                 config = json.load(f)
                 voices = []
                 tooltips = {}
+                voice_ids = {}
                 
                 default_voice = config.get("default_voice")
+                default_display_name = None
                 
                 for language, voice_list in config["edge_tts_voices"].items():
                     for voice, description in voice_list:
-                        voices.append(voice)
-                        tooltips[voice] = f"{language}: {description}"
+                        parts = voice.split('-')
+                        if len(parts) >= 3:
+                            lang_name = language.split('-')[0] if '-' in language else language
+                            display_name = f"[{lang_name}] {parts[0]}-{parts[1]} {parts[-1].replace('Neural', '').replace('Multilingual', '')}"
+                        else:
+                            display_name = voice
+                        voices.append(display_name)
+                        tooltips[display_name] = f"{language}: {description}"
+                        voice_ids[display_name] = voice
+                        
+                        if voice == default_voice:
+                            default_display_name = display_name
 
-                if default_voice in voices:
-                    voices.remove(default_voice)
-                    voices.insert(0, default_voice)
+                if default_display_name and default_display_name in voices:
+                    voices.remove(default_display_name)
+                    voices.insert(0, default_display_name)
                 
-                return voices, tooltips
+                return voices, tooltips, voice_ids
         except:
             return (
-                ["zh-CN-XiaoxiaoNeural", "en-US-JennyNeural", "ja-JP-NanamiNeural"],
-                {
-                    "zh-CN-XiaoxiaoNeural": "Chinese: Female, cheerful",
-                    "en-US-JennyNeural": "English: Female, casual",
-                    "ja-JP-NanamiNeural": "Japanese: Female, natural"
-                }
+                ["[English] en-US Jenny", "[Chinese] zh-CN Xiaoxiao", "[Japanese] ja-JP Nanami"],
+                {"[English] en-US Jenny": "English-US: Female, casual", "[Chinese] zh-CN Xiaoxiao": "Chinese-Mainland: Female, cheerful", "[Japanese] ja-JP Nanami": "Japanese: Female, natural"},
+                {"[English] en-US Jenny": "en-US-JennyNeural", "[Chinese] zh-CN Xiaoxiao": "zh-CN-XiaoxiaoNeural", "[Japanese] ja-JP Nanami": "ja-JP-NanamiNeural"}
             )
     
-    DEFAULT_VOICES, VOICE_TOOLTIPS = load_voices.__func__()
+    @property
+    def DEFAULT_VOICES(self):
+        return self.get_voice_data()[0]
+
+    @property
+    def VOICE_TOOLTIPS(self):
+        return self.get_voice_data()[1]
+
+    @property
+    def VOICE_IDS(self):
+        return self.get_voice_data()[2]
     
     @classmethod
-    def INPUT_TYPES(s):
+    def INPUT_TYPES(cls):
+        voices, _, _ = cls.get_voice_data()
         return {
             "required": {
                 "text": ("STRING", {"multiline": True, "placeholder": "Enter text to convert to speech"}),
-                "voice": (s.DEFAULT_VOICES, {"default": s.DEFAULT_VOICES[0], "tooltip": "Select a voice for text-to-speech"}),
+                "voice": (voices, {"default": voices[0], "tooltip": "Select a voice for text-to-speech"}),
             },
             "optional": {
                 "speed": ("FLOAT", {"default": 1.0, "min": 0.5, "max": 2.0, "step": 0.1, "tooltip": "Speech rate (0.5 to 2.0)"}),
@@ -85,7 +112,10 @@ class EdgeTTS:
             try:
                 await communicate.save(temp_file)
             except edge_tts.exceptions.NoAudioReceived:
-                default_voice = self.DEFAULT_VOICES[0]
+
+                default_display_name = self.DEFAULT_VOICES[0]
+                default_voice = self.VOICE_IDS.get(default_display_name, default_display_name)
+                
                 if voice != default_voice:
                     print(f"Warning: Failed with voice {voice}, trying default voice {default_voice}")
                     communicate = edge_tts.Communicate(
@@ -118,6 +148,9 @@ class EdgeTTS:
             
         text = re.sub(r'\s+', ' ', text).strip()
         
+
+        actual_voice = self.VOICE_IDS.get(voice, voice)
+        
         try:
             try:
                 loop = asyncio.get_event_loop()
@@ -125,7 +158,7 @@ class EdgeTTS:
                 loop = asyncio.new_event_loop()
                 asyncio.set_event_loop(loop)
             
-            audio_data = loop.run_until_complete(self.generate_speech(text, voice, speed, pitch))
+            audio_data = loop.run_until_complete(self.generate_speech(text, actual_voice, speed, pitch))
             return (audio_data,)
         except Exception as e:
             print(f"TTS Error: {str(e)}")
