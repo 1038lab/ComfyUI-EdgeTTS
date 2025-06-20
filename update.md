@@ -1,5 +1,37 @@
 # ComfyUI-EdgeTTS Update Log
 
+## v1.2.0 (2025/6/20)
+
+### Voice Display Enhancement
+- Improved voice name format for better readability
+  - Before: `zh-CN-XiaoxiaoNeural` → After: `[Chinese] zh-CN Xiaoxiao`
+  - Before: `en-US-JennyNeural` → After: `[English] en-US Jenny`
+- All voices now display in `[Language] locale VoiceName` format
+
+### Performance Optimization
+- Added lazy loading for voice data
+- Faster ComfyUI startup time
+- Reduced memory usage when EdgeTTS not in use
+- Voice data cached after first load
+
+### Added Multilingual Voices
+- Chinese-Mainland:
+  - zh-CN-XiaoxiaoMultilingualNeural: Female, Friendly, Positive
+  - zh-CN-YunfanMultilingualNeural: Male, Friendly, Positive
+  - zh-CN-YunxiaoMultilingualNeural: Male, Friendly, Positive
+- English-US:
+  - en-US-AvaMultilingualNeural: Female, Expressive, Caring, Pleasant, Friendly
+  - en-US-AndrewMultilingualNeural: Male, Warm, Confident, Authentic, Honest
+  - en-US-EmmaMultilingualNeural: Female, Cheerful, Clear, Conversational
+  - en-US-BrianMultilingualNeural: Male, Approachable, Casual, Sincere
+- English-GB:
+  - en-GB-AdaMultilingualNeural: Female, Friendly, Positive
+  - en-GB-OllieMultilingualNeural: Male, Friendly, Positive
+- Japanese:
+  - ja-JP-MasaruMultilingualNeural: Male, Friendly, Positive
+- Korean:
+  - ko-KR-HyunsuMultilingualNeural: Male, Friendly, Positive
+    
 ## v1.1.0 (2025/1/24)
 
 ### Voice Statistics
