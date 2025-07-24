@@ -1,4 +1,4 @@
-# ComfyUI-EdgeTTS V1.2.0
+# ComfyUI-EdgeTTS V1.2.1
 # A simplified Edge TTS node for ComfyUI
 # Uses Microsoft Edge's online text-to-speech service
 # Outputs standard ComfyUI audio format
