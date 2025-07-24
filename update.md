@@ -1,5 +1,35 @@
 # ComfyUI-EdgeTTS Update Log
 
+## v1.2.1 (2025/7/23)
+
+### Voice ID Compatibility Fix
+- Fixed 12 invalid voice IDs that were no longer available in Edge TTS API
+- Updated multilingual voices to their standard counterparts:
+  - `en-GB-AdaMultilingualNeural` → `en-GB-LibbyNeural`
+  - `en-GB-OllieMultilingualNeural` → `en-GB-RyanNeural`
+  - `en-AU-WilliamNeural` → `en-AU-WilliamMultilingualNeural`
+  - `ja-JP-MasaruMultilingualNeural` → `ja-JP-KeitaNeural`
+  - `es-ES-IsidoraMultilingualNeural` → `es-ES-XimenaNeural`
+  - `es-ES-ArabellaMultilingualNeural` → `es-ES-XimenaNeural`
+  - `es-ES-TristanMultilingualNeural` → `es-ES-XimenaNeural`
+  - `es-MX-PelayoNeural` → `es-MX-DaliaNeural`
+  - `it-IT-IsabellaMultilingualNeural` → `it-IT-GiuseppeMultilingualNeural`
+  - `it-IT-MarcelloMultilingualNeural` → `it-IT-GiuseppeMultilingualNeural`
+  - `it-IT-AlessioMultilingualNeural` → `it-IT-GiuseppeMultilingualNeural`
+  - `pt-BR-MacerioMultilingualNeural` → `pt-BR-ThalitaMultilingualNeural`
+
+### Event Loop Handling Improvement
+- Fixed issue with asyncio event loop in EdgeTTS node
+- Improved compatibility with ComfyUI's main event loop
+- Added thread isolation for TTS processing
+- Resolved deadlock issues when generating speech
+
+### Documentation Update
+- Added complete voice list documentation
+- Updated voice compatibility information
+- Added detailed voice characteristics for all languages
+- Improved troubleshooting section
+- 
 ## v1.2.0 (2025/6/20)
 
 ### Voice Display Enhancement
