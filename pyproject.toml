@@ -1,7 +1,7 @@
 [project]
 name = "comfyui-edgetts"
 description = "ComfyUI-EdgeTTS is a powerful text-to-speech node for ComfyUI, leveraging Microsoft's Edge TTS capabilities. It enables seamless conversion of text into natural-sounding speech, supporting multiple languages and voices. Ideal for enhancing user interactions, this node is easy to integrate and customize, making it perfect for various applications."
-version = "1.2.0"
+version = "1.2.1"
 license = {file = "LICENSE"}
 dependencies = [
     "edge-tts>=6.1.7",
