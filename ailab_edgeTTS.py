@@ -147,18 +147,19 @@ class EdgeTTS:
             raise ValueError("Text cannot be empty")
             
         text = re.sub(r'\s+', ' ', text).strip()
-        
-
         actual_voice = self.VOICE_IDS.get(voice, voice)
         
         try:
-            try:
-                loop = asyncio.get_event_loop()
-            except RuntimeError:
+            import concurrent.futures
+            
+            def run_async_in_thread():
                 loop = asyncio.new_event_loop()
                 asyncio.set_event_loop(loop)
+                return loop.run_until_complete(self.generate_speech(text, actual_voice, speed, pitch))
             
-            audio_data = loop.run_until_complete(self.generate_speech(text, actual_voice, speed, pitch))
+            with concurrent.futures.ThreadPoolExecutor(max_workers=1) as executor:
+                audio_data = executor.submit(run_async_in_thread).result()
+                
             return (audio_data,)
         except Exception as e:
             print(f"TTS Error: {str(e)}")
