@@ -1,5 +1,26 @@
 # ComfyUI-EdgeTTS Update Log
 
+## v2.0.0 (2026/10/13)
+
+### Service Reliability & Protocol Update
+- **Next-Gen Speech Handshake Protocol**:
+  - **Why We Changed It**: Upstream service protocol changes previously caused speech synthesis requests to fail with authorization rejection errors.
+  - **Seamless Continuity**: Fully upgraded internal connection negotiations to maintain seamless, continuous access to all Edge TTS neural voices without requiring creators to reconfigure environments or modify existing workflows.
+- **Automated Fallback & Retry**: Added rapid network jitter recovery to automatically retry transient failed handshakes, preventing pipeline interruptions during batch generation.
+
+### Audio Decoding Resilience
+- **Multi-Backend Stream Decoding**: Integrated robust audio decoding with automatic format fallbacks, eliminating runtime crashes caused by system audio codec mismatches.
+
+### New Features & Subtitle Generation
+- **Whisper SRT Subtitle Output**:
+  - **Why We Added It**: Creators frequently need precise timecoded subtitles to feed into video captioning and multimodal animation workflows.
+  - **Dual Output**: Added a dedicated `SRT` output socket to the Whisper STT node alongside raw `TEXT`, producing clean time-synced subtitle blocks (`00:00:01,000 --> 00:00:03,500`) with zero external dependencies.
+
+### Node Architecture & Standardization
+- **Standardized Port Casing**: Aligned all node output sockets with 1038lab standards (`AUDIO`, `FILEPATH`, `TEXT`, `SRT`) for seamless chaining across audio and video workflows.
+- **Enhanced Parameter Guidance**: Added descriptive tooltips to all input controls across Edge TTS, Save Audio, and Whisper STT nodes.
+- **Dynamic Node Discovery**: Upgraded internal module loader for faster startup and clean alphabetical node organization in ComfyUI menus.
+
 ## v1.2.2 (2026/1/25)
 
 ### Dependency Compatibility Fixes

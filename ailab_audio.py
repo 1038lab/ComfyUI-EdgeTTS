@@ -28,21 +28,21 @@ class Save_Audio:
     def INPUT_TYPES(s):
         return {
             "required": { 
-                "audio": ("AUDIO", ),
+                "audio": ("AUDIO", {"tooltip": "Input audio stream to save"}),
                 "filepath": ("STRING", {
                     "multiline": True,
                     "default": "",
                     "placeholder": "custom_path/filename",
-                    "tooltip": "by default, the audio will be saved to output/TTS/{date}/TTS-xxxx.{format}"
+                    "tooltip": "Custom output path or filename (default: output/TTS/{date}/TTS-xxxx.{format})"
                 }),
-                "format": (s.AUDIO_FORMATS, {"default": "mp3"}),
-                "quality": (s.QUALITY_PRESETS, {"default": "high"}),
-                "overwrite": ("BOOLEAN", {"default": False})
+                "format": (s.AUDIO_FORMATS, {"default": "mp3", "tooltip": "Audio format (mp3, wav, flac)"}),
+                "quality": (s.QUALITY_PRESETS, {"default": "high", "tooltip": "Audio quality bitrate preset"}),
+                "overwrite": ("BOOLEAN", {"default": False, "tooltip": "Overwrite existing file if set to true"})
             },
         }
 
     RETURN_TYPES = ("STRING", "AUDIO",)
-    RETURN_NAMES = ("filepath", "audio",)
+    RETURN_NAMES = ("FILEPATH", "AUDIO",)
     FUNCTION = "save_audio"
     OUTPUT_NODE = True
     CATEGORY = "🧪AILab/🔊Audio"

@@ -1,7 +1,9 @@
+import io
 import os
 import torch
 import torchaudio
 import whisper
+from whisper.utils import WriteSRT
 import json
 
 class WhisperSTT:
@@ -32,7 +34,7 @@ class WhisperSTT:
     def INPUT_TYPES(s):
         return {
             "required": {
-                "audio": ("AUDIO",),
+                "audio": ("AUDIO", {"tooltip": "Input audio stream to transcribe"}),
                 "model_size": (s.WHISPER_MODELS, {
                     "default": "base",
                     "tooltip": "Whisper model size - larger = more accurate but slower"
@@ -44,7 +46,8 @@ class WhisperSTT:
             }
         }
     
-    RETURN_TYPES = ("STRING",)
+    RETURN_TYPES = ("STRING", "STRING",)
+    RETURN_NAMES = ("TEXT", "SRT",)
     FUNCTION = "stt"
     CATEGORY = "🧪AILab/🔊Audio"
 
@@ -66,8 +69,12 @@ class WhisperSTT:
                 detected_lang = result.get("language", "unknown")
                 confidence = result.get("language_probability", 0.0)
                 print(f"[Whisper STT] Detected: {detected_lang} (conf: {confidence:.2f})")
-            
-            return (result["text"].strip(),)
+
+            sio = io.StringIO()
+            WriteSRT(".").write_result(result, sio)
+            srt_text = sio.getvalue().strip()
+
+            return (result["text"].strip(), srt_text)
                 
         except Exception as e:
             print(f"[Whisper STT] Error: {str(e)}")

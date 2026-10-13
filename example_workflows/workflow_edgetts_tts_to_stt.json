@@ -1,0 +1,362 @@
+{
+  "id": "0f97e221-e840-4849-8fbf-b9f07bcf2a12",
+  "revision": 0,
+  "last_node_id": 7,
+  "last_link_id": 7,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "EdgeTTS",
+      "pos": [
+        120,
+        150
+      ],
+      "size": [
+        380,
+        260
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "slot_index": 0,
+          "links": [
+            3,
+            5
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-edgetts",
+        "ver": "7b166c5897ad802b116352d15f227275bb5f829d",
+        "Node name for S&R": "EdgeTTS",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "Hello! This is Microsoft Edge Text to Speech running in ComfyUI. We are testing audio synthesis and speech recognition with automatic SRT subtitles.",
+        "[English] en-US Jenny",
+        1,
+        0
+      ],
+      "widgets_values_named": {
+        "text": "Hello! This is Microsoft Edge Text to Speech running in ComfyUI. We are testing audio synthesis and speech recognition with automatic SRT subtitles.",
+        "voice": "[English] en-US Jenny",
+        "speed": 1,
+        "pitch": 0
+      }
+    },
+    {
+      "id": 2,
+      "type": "Save_Audio",
+      "pos": [
+        890.3295245655077,
+        150
+      ],
+      "size": [
+        292.3765127144609,
+        180
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 4
+        }
+      ],
+      "outputs": [
+        {
+          "name": "FILEPATH",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-edgetts",
+        "ver": "7b166c5897ad802b116352d15f227275bb5f829d",
+        "Node name for S&R": "Save_Audio",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "",
+        "mp3",
+        "high",
+        false
+      ],
+      "widgets_values_named": {
+        "filepath": "",
+        "format": "mp3",
+        "quality": "high",
+        "overwrite": false
+      }
+    },
+    {
+      "id": 4,
+      "type": "WhisperSTT",
+      "pos": [
+        539.2942229626224,
+        397.2078115425857
+      ],
+      "size": [
+        291.1443589154411,
+        102
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 3
+        }
+      ],
+      "outputs": [
+        {
+          "name": "TEXT",
+          "type": "STRING",
+          "links": [
+            6
+          ]
+        },
+        {
+          "name": "SRT",
+          "type": "STRING",
+          "links": [
+            7
+          ]
+        }
+      ],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        },
+        "cnr_id": "comfyui-edgetts",
+        "ver": "7b166c5897ad802b116352d15f227275bb5f829d",
+        "Node name for S&R": "WhisperSTT"
+      },
+      "widgets_values": [
+        "base",
+        "auto"
+      ],
+      "widgets_values_named": {
+        "model_size": "base",
+        "language": "auto"
+      }
+    },
+    {
+      "id": 5,
+      "type": "PreviewAudio",
+      "pos": [
+        542.9514251545787,
+        150
+      ],
+      "size": [
+        270,
+        88
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 5
+        }
+      ],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": [
+            4
+          ]
+        }
+      ],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        },
+        "cnr_id": "comfy-core",
+        "ver": "0.39.1",
+        "Node name for S&R": "PreviewAudio"
+      },
+      "widgets_values": [],
+      "widgets_values_named": {}
+    },
+    {
+      "id": 6,
+      "type": "iToolsPreviewText",
+      "pos": [
+        890.3295245655077,
+        397.2078115425857
+      ],
+      "size": [
+        302.1176470588234,
+        100.37646005667887
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 6
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text",
+          "shape": 6,
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        },
+        "cnr_id": "comfyui-itools",
+        "ver": "a8f2fef227ca5b0cb9321c39ac7b874a906b1a5b",
+        "Node name for S&R": "iToolsPreviewText"
+      },
+      "widgets_values": [
+        "Hello. This is Microsoft Edge Text to speech running in Comfy UI. We are testing audio synthesis and speech recognition with automatic SRT subtitles."
+      ],
+      "widgets_values_named": {
+        "text2": "Hello. This is Microsoft Edge Text to speech running in Comfy UI. We are testing audio synthesis and speech recognition with automatic SRT subtitles."
+      }
+    },
+    {
+      "id": 7,
+      "type": "iToolsPreviewText",
+      "pos": [
+        891.0197627701644,
+        556.6776902033889
+      ],
+      "size": [
+        297.97642846200984,
+        208.58036056219373
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text",
+          "shape": 6,
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        },
+        "cnr_id": "comfyui-itools",
+        "ver": "a8f2fef227ca5b0cb9321c39ac7b874a906b1a5b",
+        "Node name for S&R": "iToolsPreviewText"
+      },
+      "widgets_values": [
+        "1\n00:00:00,000 --> 00:00:01,000\nHello.\n\n2\n00:00:01,000 --> 00:00:05,880\nThis is Microsoft Edge Text to speech running in Comfy UI.\n\n3\n00:00:05,880 --> 00:00:10,800\nWe are testing audio synthesis and speech recognition with automatic SRT subtitles."
+      ],
+      "widgets_values_named": {
+        "text2": "1\n00:00:00,000 --> 00:00:01,000\nHello.\n\n2\n00:00:01,000 --> 00:00:05,880\nThis is Microsoft Edge Text to speech running in Comfy UI.\n\n3\n00:00:05,880 --> 00:00:10,800\nWe are testing audio synthesis and speech recognition with automatic SRT subtitles."
+      }
+    }
+  ],
+  "links": [
+    [
+      3,
+      1,
+      0,
+      4,
+      0,
+      "AUDIO"
+    ],
+    [
+      4,
+      5,
+      0,
+      2,
+      0,
+      "AUDIO"
+    ],
+    [
+      5,
+      1,
+      0,
+      5,
+      0,
+      "AUDIO"
+    ],
+    [
+      6,
+      4,
+      0,
+      6,
+      0,
+      "STRING"
+    ],
+    [
+      7,
+      4,
+      1,
+      7,
+      0,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ue_links": [],
+    "links_added_by_ue": [],
+    "ds": {
+      "scale": 1.1590909090909092,
+      "offset": [
+        42.24245340003889,
+        28.257345869366866
+      ]
+    },
+    "frontendVersion": "1.53.10",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4,
+  "seed_widgets": {}
+}

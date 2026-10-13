@@ -1,15 +1,21 @@
-# ComfyUI Audio Nodes
+# ComfyUI-EdgeTTS
+
+<p align="center">
+  <img src="https://img.shields.io/badge/ComfyUI-Custom--Node-blue?style=for-the-badge&logo=comfyui" alt="ComfyUI">
+  <img src="https://img.shields.io/badge/PyTorch-%3E=2.0-red?style=for-the-badge&logo=pytorch" alt="PyTorch">
+  <img src="https://img.shields.io/badge/License-GPL--3.0-green?style=for-the-badge" alt="GPL-3.0">
+</p>
 
 ComfyUI-EdgeTTS is a powerful text-to-speech node for ComfyUI, leveraging Microsoft's Edge TTS capabilities. It enables seamless conversion of text into natural-sounding speech, supporting multiple languages and voices. Ideal for enhancing user interactions, this node is easy to integrate and customize, making it perfect for various applications.
 
 https://github.com/user-attachments/assets/a5b9165b-a413-49fd-989e-0ef3141afce7
 
-## Updates
-- V1.2.2 (2026-01-25) - Voice ID update requirments [update log](update.md#v121-2026125).
-- V1.2.1 (2025-07-23) - Voice ID update & Bug Fixed [update log](update.md#v121-2025723).
-- V1.2.0 (2025-06-20) - Simplified voice display format, improved performance with lazy loading and caching, and reduced memory usage. For more information, please see the [update log](update.md#v120-2025620).
- 
-- V1.1.0 (2025-01-24) - Added 19 new languages and 38 new voices, with more detailed characteristics for existing Chinese voices. For more information, please see the [update log](update.md#v110-2025124).
+## News & Updates
+- **2026/10/13**: Update ComfyUI-EdgeTTS to **v2.0.0** ( [update.md](update.md#v200-20261013) )
+- **2026/01/25**: Update ComfyUI-EdgeTTS to **v1.2.2** ( [update.md](update.md#v122-2026125) )
+- **2025/07/23**: Update ComfyUI-EdgeTTS to **v1.2.1** ( [update.md](update.md#v121-2025723) )
+- **2025/06/20**: Update ComfyUI-EdgeTTS to **v1.2.0** ( [update.md](update.md#v120-2025620) )
+- **2025/01/24**: Update ComfyUI-EdgeTTS to **v1.1.0** ( [update.md](update.md#v110-2025124) )
 
 ## Features
 
@@ -24,6 +30,7 @@ https://github.com/user-attachments/assets/a5b9165b-a413-49fd-989e-0ef3141afce7
 - **Whisper STT**: High-accuracy speech recognition
   - Multiple language support with auto-detection
   - Multiple model sizes (tiny to large)
+  - Dual output: raw transcription text (`TEXT`) and timecoded subtitles (`SRT`)
   - Supports ComfyUI audio format
   - Language detection confidence reporting
 

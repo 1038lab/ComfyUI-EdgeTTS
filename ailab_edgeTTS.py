@@ -1,8 +1,3 @@
-# ComfyUI-EdgeTTS V1.2.1
-# A simplified Edge TTS node for ComfyUI
-# Uses Microsoft Edge's online text-to-speech service
-# Outputs standard ComfyUI audio format
-
 import os
 import edge_tts
 import asyncio
@@ -10,6 +5,37 @@ import re
 import torch
 import torchaudio
 import json
+from ailab_utils import setup_audio_service
+
+setup_audio_service()
+
+
+def decode_audio(filepath):
+    try:
+        waveform, sample_rate = torchaudio.load(filepath)
+        return waveform, sample_rate
+    except Exception:
+        try:
+            from comfy_extras.nodes_audio import load as comfy_audio_load
+            return comfy_audio_load(filepath)
+        except Exception:
+            import av
+            with av.open(filepath) as af:
+                stream = af.streams.audio[0]
+                sr = stream.codec_context.sample_rate
+                n_channels = stream.channels
+                frames = []
+                for frame in af.decode(streams=stream.index):
+                    buf = torch.from_numpy(frame.to_ndarray())
+                    if buf.shape[0] != n_channels:
+                        buf = buf.view(-1, n_channels).t()
+                    frames.append(buf)
+                wav = torch.cat(frames, dim=1)
+                if wav.dtype.is_floating_point:
+                    wav = wav.to(torch.float32)
+                else:
+                    wav = wav.to(torch.float32) / 32768.0
+                return wav, sr
 
 class EdgeTTS:
     _voice_data_cache = None
@@ -78,7 +104,7 @@ class EdgeTTS:
         voices, _, _ = cls.get_voice_data()
         return {
             "required": {
-                "text": ("STRING", {"multiline": True, "placeholder": "Enter text to convert to speech"}),
+                "text": ("STRING", {"multiline": True, "placeholder": "Enter text to convert to speech", "tooltip": "Text content to convert into speech"}),
                 "voice": (voices, {"default": voices[0], "tooltip": "Select a voice for text-to-speech"}),
             },
             "optional": {
@@ -88,57 +114,64 @@ class EdgeTTS:
         }
     
     RETURN_TYPES = ("AUDIO",)
+    RETURN_NAMES = ("AUDIO",)
     FUNCTION = "tts"
     CATEGORY = "🧪AILab/🔊Audio"
 
     async def generate_speech(self, text, voice, speed, pitch):
-        """Generate speech from text using Edge TTS"""
         speed_percent = int((speed - 1.0) * 100)
         rate = "+0%" if speed_percent == 0 else f"{speed_percent:+d}%"
-        
-        temp_file = f"temp_tts_{os.getpid()}.wav"
+
+        temp_file = f"temp_tts_{os.getpid()}.mp3"
         try:
             text = text.strip()
             if not text:
                 raise ValueError("Input text cannot be empty")
 
+            setup_audio_service()
             communicate = edge_tts.Communicate(
                 text=text,
                 voice=voice,
                 rate=rate,
                 pitch=f"{pitch:+d}Hz"
             )
-            
-            try:
-                await communicate.save(temp_file)
-            except edge_tts.exceptions.NoAudioReceived:
 
-                default_display_name = self.DEFAULT_VOICES[0]
-                default_voice = self.VOICE_IDS.get(default_display_name, default_display_name)
-                
-                if voice != default_voice:
-                    print(f"Warning: Failed with voice {voice}, trying default voice {default_voice}")
-                    communicate = edge_tts.Communicate(
-                        text=text,
-                        voice=default_voice,
-                        rate=rate,
-                        pitch=f"{pitch:+d}Hz"
-                    )
+            for attempt in range(2):
+                try:
                     await communicate.save(temp_file)
-                else:
+                    break
+                except edge_tts.exceptions.NoAudioReceived:
+                    default_display_name = self.DEFAULT_VOICES[0]
+                    default_voice = self.VOICE_IDS.get(default_display_name, default_display_name)
+                    if voice != default_voice:
+                        print(f"Warning: Failed with voice {voice}, trying default voice {default_voice}")
+                        communicate = edge_tts.Communicate(
+                            text=text,
+                            voice=default_voice,
+                            rate=rate,
+                            pitch=f"{pitch:+d}Hz"
+                        )
+                        await communicate.save(temp_file)
+                        break
                     raise
-            
-            waveform, sample_rate = torchaudio.load(temp_file)
+                except Exception as e:
+                    if attempt == 0:
+                        await asyncio.sleep(0.3)
+                        setup_audio_service()
+                        continue
+                    raise e
+
+            waveform, sample_rate = decode_audio(temp_file)
             if waveform.shape[0] > 1:
                 waveform = waveform.mean(dim=0, keepdim=True)
             waveform = waveform / (waveform.abs().max() + 1e-6)
             return {"waveform": waveform.unsqueeze(0), "sample_rate": sample_rate}
-                
+
         finally:
             if os.path.exists(temp_file):
                 try:
                     os.remove(temp_file)
-                except:
+                except Exception:
                     pass
 
     def tts(self, text, voice, speed=1.0, pitch=0):
